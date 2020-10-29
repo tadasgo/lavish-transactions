@@ -11,16 +11,21 @@ function Navbar() {
 	const [button, setButton] = useState(true);
 
 	const handleClick = () => setClick(!click);
-	const closeMobileMenu = () => setButton(false);
+	const closeMobileMenu = () => setClick(false);
 
 	const showButton = () => (window.innerWidth <= 960 ? setButton(false) : setButton(true));
+
+	useEffect(() => {
+		showButton();
+	}, []);
+
 	window.addEventListener('resize', showButton);
 
 	return (
 		<>
 			<div className="navbar">
 				<div className="navbar-container container">
-					<Link to="/" className="navbar-logo">
+					<Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
 						<MdFingerprint className="navbar-icon" />
 						LAVISH
 					</Link>
@@ -29,17 +34,17 @@ function Navbar() {
 					</div>
 					<ul className={click ? 'nav-menu active' : 'nav-menu'}>
 						<li className="nav-item">
-							<Link to="/" className="nav-link">
+							<Link to="/" className="nav-link" onClick={closeMobileMenu}>
 								Home
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link to="/services" className="nav-link">
+							<Link to="/services" className="nav-link" onClick={closeMobileMenu}>
 								Services
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link to="/products" className="nav-link">
+							<Link to="/products" className="nav-link" onClick={closeMobileMenu}>
 								Products
 							</Link>
 						</li>
@@ -49,7 +54,7 @@ function Navbar() {
 									<Button btnStyle="btn--outline">Sign Up</Button>
 								</Link>
 							) : (
-								<Link to="/sign-up" className="btn-link">
+								<Link to="/sign-up" className="btn-link" onClick={closeMobileMenu}>
 									<Button btnStyle="btn--outline" btnSize="btn--mobile">
 										Sign Up
 									</Button>

@@ -50,11 +50,11 @@ function Navbar() {
 						</li>
 						<li className="nav-btn">
 							{button ? (
-								<Link to="/sign-up" className="btn-link">
+								<Link to="/SignUp" className="btn-link">
 									<Button btnStyle="btn--outline">Sign Up</Button>
 								</Link>
 							) : (
-								<Link to="/sign-up" className="btn-link" onClick={closeMobileMenu}>
+								<Link to="/SignUp" className="btn-link" onClick={closeMobileMenu}>
 									<Button btnStyle="btn--outline" btnSize="btn--mobile">
 										Sign Up
 									</Button>

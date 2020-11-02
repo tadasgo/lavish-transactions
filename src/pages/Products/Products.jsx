@@ -1,18 +1,15 @@
 import React from 'react';
 import Hero from '../../components/hero/Hero';
 import Pricing from '../../components/pricing/Pricing';
-import { homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from './Data';
+import { homeObjTwo } from './Data';
 
-function Home() {
+function Products() {
 	return (
 		<>
-			<Hero {...homeObjOne} />
-			<Hero {...homeObjThree} />
 			<Hero {...homeObjTwo} />
 			<Pricing />
-			<Hero {...homeObjFour} />
 		</>
 	);
 }
 
-export default Home;
+export default Products;
